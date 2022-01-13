@@ -39,17 +39,17 @@ composer update
 
 After updating composer, add the ServiceProvider to the providers array in config/app.php
 ```php
-    LynX39\LaraPdfMerger\PdfMergerServiceProvider::class,
+    Bazaim\LaraPdfMerger\PdfMergerServiceProvider::class,
 ```
 You can optionally use the facade for shorter code. Add this to your facades:
 ```php
-    'PdfMerger' => LynX39\LaraPdfMerger\Facades\PdfMerger::class,
+    'PdfMerger' => Bazaim\LaraPdfMerger\Facades\PdfMerger::class,
 ```
 ## Usage
 
 ```php
 
-use LynX39\LaraPdfMerger\Facades\PdfMerger;
+use Bazaim\LaraPdfMerger\Facades\PdfMerger;
 
 //...
 
