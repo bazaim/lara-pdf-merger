@@ -5,8 +5,12 @@ namespace LynX39\LaraPdfMerger;
 use Exception;
 use TCPDI;
 
-require_once('tcpdf/tcpdf.php');
-require_once('tcpdf/tcpdi.php');
+if (!class_exists('TCPDF')) {
+    require_once('tcpdf/tcpdf.php');
+}
+if (!class_exists('TCPDI')) {
+    require_once('tcpdf/tcpdi.php');
+}
 
 class PdfManage
 {
