@@ -18,12 +18,18 @@
             "name": "Marouan Sami",
             "email": "sami.marwen.isetcom@gmail.com",
             "homepage": "https://github.com/MarwenSami"
+        }, {
+            "name": "Jérémy Claisse",
+            "email": "claisse.jeremy01@gmail.com",
+            "homepage": "https://github.com/bazaim"
         }
     ],
     "require": {
-        "php" : ">=5.4"
+        "php" : ">=5.4",
+        "tecnickcom/tcpdf": "^6.4",
+        "propa/tcpdi": "^1.3"
     },
-    "homepage" : "https://github.com/MarwenSami/lara-pdf-merger",
+    "homepage" : "https://github.com/bazaim/lara-pdf-merger",
     "autoload": {
         "psr-0": {
             "Bazaim\\LaraPdfMerger": "src/"

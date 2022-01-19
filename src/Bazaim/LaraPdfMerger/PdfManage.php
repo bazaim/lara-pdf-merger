@@ -5,19 +5,14 @@ namespace Bazaim\LaraPdfMerger;
 use Exception;
 use TCPDI;
 
-if (!class_exists('TCPDF')) {
-    require_once('tcpdf/tcpdf.php');
-}
-if (!class_exists('TCPDI')) {
-    require_once('tcpdf/tcpdi.php');
-}
 
 class PdfManage
 {
     private $_files;    //['form.pdf']  ["1,2,4, 5-19"]
     private $_fpdi;
 
-    public function init(){
+    public function init()
+    {
         $this->_files = null;
 
         $this->_fpdi = new TCPDI;
@@ -57,7 +52,7 @@ class PdfManage
      * @throws Exception
      * @array $meta [title => $title, author => $author, subject => $subject, keywords => $keywords, creator => $creator]
      */
-    private function doMerge($orientation = null, $meta = [], $duplex=false)
+    private function doMerge($orientation = null, $meta = [], $duplex = false)
     {
         if (!isset($this->_files) || !is_array($this->_files)) {
             throw new Exception("No PDFs to merge.");
@@ -98,7 +93,6 @@ class PdfManage
 
                     $this->_fpdi->AddPage($fileorientation, array($size['w'], $size['h']));
                     $this->_fpdi->useTemplate($template);
-
                 }
             }
             if ($duplex && $this->_fpdi->PageNo() % 2) {
@@ -115,7 +109,8 @@ class PdfManage
      *
      * @throws \Exception if there are no PDFs to merge
      */
-    public function merge($orientation = null, $meta = []) {
+    public function merge($orientation = null, $meta = [])
+    {
         $this->doMerge($orientation, $meta, false);
     }
 
@@ -127,7 +122,8 @@ class PdfManage
      *
      * @throws \Exception if there are no PDFs to merge
      */
-    public function duplexMerge($orientation = null, $meta = []) {
+    public function duplexMerge($orientation = null, $meta = [])
+    {
         $this->doMerge($orientation, $meta, true);
     }
 
@@ -145,8 +141,6 @@ class PdfManage
                 throw new Exception("Error outputting PDF to '$outputmode'.");
             }
         }
-
-
     }
 
     /**
@@ -156,8 +150,7 @@ class PdfManage
      */
     private function _switchmode($mode)
     {
-        switch(strtolower($mode))
-        {
+        switch (strtolower($mode)) {
             case 'download':
                 return 'D';
                 break;
@@ -225,6 +218,5 @@ class PdfManage
                 $this->_fpdi->$metodName($arg);
             }
         }
-    } 
-
+    }
 }

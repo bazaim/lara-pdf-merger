@@ -1,3 +1,8 @@
+**FORK** to be valid with PHP 7.4.15.  
+**FORK** to really *composer*.  
+
+----
+
 # lara-pdf-merger
 
 Drop-in replacement for the original package from [deltaaskii/lara-pdf-merger](https://github.com/deltaaskii/lara-pdf-merger) that works under *PHP 7.2*
